@@ -1,0 +1,141 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+all                    1
+blastn                 5
+filter_blast           5
+habitat_profile        5
+map_metadata           5
+total                 21
+
+Select jobs to execute...
+Execute 4 jobs...
+
+[Fri Apr 18 12:43:02 2025]
+localrule blastn:
+    input: data/AB022925.fasta, 16S_database/LAB_16S_db.nsq
+    output: results/blast_raw/AB022925_blast_results.tsv
+    log: logs/AB022925_blast.log
+    jobid: 16
+    reason: Missing output files: results/blast_raw/AB022925_blast_results.tsv
+    wildcards: sample=AB022925
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+
+[Fri Apr 18 12:43:02 2025]
+localrule blastn:
+    input: data/KP326371.fasta, 16S_database/LAB_16S_db.nsq
+    output: results/blast_raw/KP326371_blast_results.tsv
+    log: logs/KP326371_blast.log
+    jobid: 4
+    reason: Missing output files: results/blast_raw/KP326371_blast_results.tsv
+    wildcards: sample=KP326371
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+
+[Fri Apr 18 12:43:02 2025]
+localrule blastn:
+    input: data/AF243177.fasta, 16S_database/LAB_16S_db.nsq
+    output: results/blast_raw/AF243177_blast_results.tsv
+    log: logs/AF243177_blast.log
+    jobid: 8
+    reason: Missing output files: results/blast_raw/AF243177_blast_results.tsv
+    wildcards: sample=AF243177
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+
+[Fri Apr 18 12:43:02 2025]
+localrule blastn:
+    input: data/HQ906500.fasta, 16S_database/LAB_16S_db.nsq
+    output: results/blast_raw/HQ906500_blast_results.tsv
+    log: logs/HQ906500_blast.log
+    jobid: 20
+    reason: Missing output files: results/blast_raw/HQ906500_blast_results.tsv
+    wildcards: sample=HQ906500
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+[Fri Apr 18 12:43:03 2025]
+Finished job 16.
+1 of 21 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 18 12:43:03 2025]
+localrule filter_blast:
+    input: results/blast_raw/AB022925_blast_results.tsv
+    output: results/blast_filtered/AB022925_blast_results_filtered.tsv
+    jobid: 15
+    reason: Missing output files: results/blast_filtered/AB022925_blast_results_filtered.tsv; Input files updated by another job: results/blast_raw/AB022925_blast_results.tsv
+    wildcards: sample=AB022925
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+[Fri Apr 18 12:43:03 2025]
+Finished job 8.
+2 of 21 steps (10%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 18 12:43:03 2025]
+localrule filter_blast:
+    input: results/blast_raw/AF243177_blast_results.tsv
+    output: results/blast_filtered/AF243177_blast_results_filtered.tsv
+    jobid: 7
+    reason: Missing output files: results/blast_filtered/AF243177_blast_results_filtered.tsv; Input files updated by another job: results/blast_raw/AF243177_blast_results.tsv
+    wildcards: sample=AF243177
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+[Fri Apr 18 12:43:03 2025]
+Finished job 20.
+3 of 21 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 18 12:43:04 2025]
+localrule filter_blast:
+    input: results/blast_raw/HQ906500_blast_results.tsv
+    output: results/blast_filtered/HQ906500_blast_results_filtered.tsv
+    jobid: 19
+    reason: Missing output files: results/blast_filtered/HQ906500_blast_results_filtered.tsv; Input files updated by another job: results/blast_raw/HQ906500_blast_results.tsv
+    wildcards: sample=HQ906500
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+[Fri Apr 18 12:43:04 2025]
+Finished job 4.
+4 of 21 steps (19%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 18 12:43:04 2025]
+localrule filter_blast:
+    input: results/blast_raw/KP326371_blast_results.tsv
+    output: results/blast_filtered/KP326371_blast_results_filtered.tsv
+    jobid: 3
+    reason: Missing output files: results/blast_filtered/KP326371_blast_results_filtered.tsv; Input files updated by another job: results/blast_raw/KP326371_blast_results.tsv
+    wildcards: sample=KP326371
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule filter_blast in file /Users/nanzhen/Documents/GitHub/LABhabitatPre/Snakefile, line 30:
+Job 7  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/blast_filtered/AF243177_blast_results_filtered.tsv
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule filter_blast in file /Users/nanzhen/Documents/GitHub/LABhabitatPre/Snakefile, line 30:
+Job 15  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/blast_filtered/AB022925_blast_results_filtered.tsv
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule filter_blast in file /Users/nanzhen/Documents/GitHub/LABhabitatPre/Snakefile, line 30:
+Job 19  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/blast_filtered/HQ906500_blast_results_filtered.tsv
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule filter_blast in file /Users/nanzhen/Documents/GitHub/LABhabitatPre/Snakefile, line 30:
+Job 3  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/blast_filtered/KP326371_blast_results_filtered.tsv
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-18T124301.006414.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule blastn in file /Users/nanzhen/Documents/GitHub/LABhabitatPre/Snakefile, line 11:
+Missing input files for rule blastn:
+    output: results/blast_raw/MW367780_blast_results.tsv
+    wildcards: sample=MW367780
+    affected files:
+        16S_database/LAB_16S_db

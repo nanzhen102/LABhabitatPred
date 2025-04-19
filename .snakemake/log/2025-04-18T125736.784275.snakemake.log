@@ -1,0 +1,209 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+all                    1
+blastn                 1
+filter_blast           5
+habitat_profile        5
+map_metadata           5
+total                 17
+
+Select jobs to execute...
+Execute 4 jobs...
+
+[Fri Apr 18 12:57:37 2025]
+localrule filter_blast:
+    input: results/blast_raw/AB022925_blast_results.tsv
+    output: results/blast_filtered/AB022925_blast_results_filtered.tsv
+    jobid: 15
+    reason: Missing output files: results/blast_filtered/AB022925_blast_results_filtered.tsv
+    wildcards: sample=AB022925
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+[Fri Apr 18 12:57:37 2025]
+localrule filter_blast:
+    input: results/blast_raw/HQ906500_blast_results.tsv
+    output: results/blast_filtered/HQ906500_blast_results_filtered.tsv
+    jobid: 19
+    reason: Missing output files: results/blast_filtered/HQ906500_blast_results_filtered.tsv
+    wildcards: sample=HQ906500
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+[Fri Apr 18 12:57:37 2025]
+localrule filter_blast:
+    input: results/blast_raw/AF243177_blast_results.tsv
+    output: results/blast_filtered/AF243177_blast_results_filtered.tsv
+    jobid: 7
+    reason: Missing output files: results/blast_filtered/AF243177_blast_results_filtered.tsv
+    wildcards: sample=AF243177
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+[Fri Apr 18 12:57:37 2025]
+localrule filter_blast:
+    input: results/blast_raw/KP326371_blast_results.tsv
+    output: results/blast_filtered/KP326371_blast_results_filtered.tsv
+    jobid: 3
+    reason: Missing output files: results/blast_filtered/KP326371_blast_results_filtered.tsv
+    wildcards: sample=KP326371
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+[Fri Apr 18 12:57:38 2025]
+Finished job 3.
+1 of 17 steps (6%) done
+[Fri Apr 18 12:57:38 2025]
+Finished job 7.
+2 of 17 steps (12%) done
+[Fri Apr 18 12:57:38 2025]
+Finished job 19.
+3 of 17 steps (18%) done
+[Fri Apr 18 12:57:38 2025]
+Finished job 15.
+4 of 17 steps (24%) done
+Select jobs to execute...
+Execute 4 jobs...
+
+[Fri Apr 18 12:57:38 2025]
+localrule map_metadata:
+    input: results/blast_filtered/KP326371_blast_results_filtered.tsv, 16S_database/ssu_all_r220_Lactobacillaceae_deduplicated_1200bp_noN_matched_metadata.csv
+    output: results/mapped_metadata/KP326371_blast_results_filtered_metadata.csv
+    jobid: 2
+    reason: Missing output files: results/mapped_metadata/KP326371_blast_results_filtered_metadata.csv; Input files updated by another job: results/blast_filtered/KP326371_blast_results_filtered.tsv
+    wildcards: sample=KP326371
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+[Fri Apr 18 12:57:38 2025]
+localrule map_metadata:
+    input: results/blast_filtered/AF243177_blast_results_filtered.tsv, 16S_database/ssu_all_r220_Lactobacillaceae_deduplicated_1200bp_noN_matched_metadata.csv
+    output: results/mapped_metadata/AF243177_blast_results_filtered_metadata.csv
+    jobid: 6
+    reason: Missing output files: results/mapped_metadata/AF243177_blast_results_filtered_metadata.csv; Input files updated by another job: results/blast_filtered/AF243177_blast_results_filtered.tsv
+    wildcards: sample=AF243177
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+[Fri Apr 18 12:57:38 2025]
+localrule map_metadata:
+    input: results/blast_filtered/HQ906500_blast_results_filtered.tsv, 16S_database/ssu_all_r220_Lactobacillaceae_deduplicated_1200bp_noN_matched_metadata.csv
+    output: results/mapped_metadata/HQ906500_blast_results_filtered_metadata.csv
+    jobid: 18
+    reason: Missing output files: results/mapped_metadata/HQ906500_blast_results_filtered_metadata.csv; Input files updated by another job: results/blast_filtered/HQ906500_blast_results_filtered.tsv
+    wildcards: sample=HQ906500
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+[Fri Apr 18 12:57:38 2025]
+localrule blastn:
+    input: data/MW367780.fasta, 16S_database/LAB_16S_db.nsq
+    output: results/blast_raw/MW367780_blast_results.tsv
+    log: logs/MW367780_blast.log
+    jobid: 12
+    reason: Missing output files: results/blast_raw/MW367780_blast_results.tsv
+    wildcards: sample=MW367780
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+Select jobs to execute...
+[Fri Apr 18 12:57:39 2025]
+Finished job 12.
+5 of 17 steps (29%) done
+Execute 1 jobs...
+
+[Fri Apr 18 12:57:39 2025]
+localrule filter_blast:
+    input: results/blast_raw/MW367780_blast_results.tsv
+    output: results/blast_filtered/MW367780_blast_results_filtered.tsv
+    jobid: 11
+    reason: Missing output files: results/blast_filtered/MW367780_blast_results_filtered.tsv; Input files updated by another job: results/blast_raw/MW367780_blast_results.tsv
+    wildcards: sample=MW367780
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+[Fri Apr 18 12:57:39 2025]
+Finished job 18.
+6 of 17 steps (35%) done
+[Fri Apr 18 12:57:39 2025]
+Finished job 6.
+7 of 17 steps (41%) done
+[Fri Apr 18 12:57:39 2025]
+Finished job 2.
+8 of 17 steps (47%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Fri Apr 18 12:57:39 2025]
+localrule habitat_profile:
+    input: results/mapped_metadata/AF243177_blast_results_filtered_metadata.csv, 16S_database/source_class_weight.csv
+    output: results/habitat_profiles/AF243177_habitat_profile.csv
+    jobid: 5
+    reason: Missing output files: results/habitat_profiles/AF243177_habitat_profile.csv; Input files updated by another job: results/mapped_metadata/AF243177_blast_results_filtered_metadata.csv
+    wildcards: sample=AF243177
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+[Fri Apr 18 12:57:39 2025]
+localrule habitat_profile:
+    input: results/mapped_metadata/HQ906500_blast_results_filtered_metadata.csv, 16S_database/source_class_weight.csv
+    output: results/habitat_profiles/HQ906500_habitat_profile.csv
+    jobid: 17
+    reason: Missing output files: results/habitat_profiles/HQ906500_habitat_profile.csv; Input files updated by another job: results/mapped_metadata/HQ906500_blast_results_filtered_metadata.csv
+    wildcards: sample=HQ906500
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+[Fri Apr 18 12:57:39 2025]
+localrule habitat_profile:
+    input: results/mapped_metadata/KP326371_blast_results_filtered_metadata.csv, 16S_database/source_class_weight.csv
+    output: results/habitat_profiles/KP326371_habitat_profile.csv
+    jobid: 1
+    reason: Missing output files: results/habitat_profiles/KP326371_habitat_profile.csv; Input files updated by another job: results/mapped_metadata/KP326371_blast_results_filtered_metadata.csv
+    wildcards: sample=KP326371
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+Select jobs to execute...
+[Fri Apr 18 12:57:40 2025]
+Finished job 11.
+9 of 17 steps (53%) done
+Execute 1 jobs...
+
+[Fri Apr 18 12:57:40 2025]
+localrule map_metadata:
+    input: results/blast_filtered/MW367780_blast_results_filtered.tsv, 16S_database/ssu_all_r220_Lactobacillaceae_deduplicated_1200bp_noN_matched_metadata.csv
+    output: results/mapped_metadata/MW367780_blast_results_filtered_metadata.csv
+    jobid: 10
+    reason: Missing output files: results/mapped_metadata/MW367780_blast_results_filtered_metadata.csv; Input files updated by another job: results/blast_filtered/MW367780_blast_results_filtered.tsv
+    wildcards: sample=MW367780
+    resources: tmpdir=/var/folders/fg/wx4t3r3d4jbblkfl6mr9xy4w0000gn/T
+
+RuleException:
+CalledProcessError in file /Users/nanzhen/Documents/GitHub/LABhabitatPre/Snakefile, line 56:
+Command 'set -euo pipefail;  /Users/nanzhen/opt/anaconda3/envs/snakemake/bin/python3.12 /Users/nanzhen/Documents/GitHub/LABhabitatPre/.snakemake/scripts/tmprhfgjnta.score_query_habitat.py' returned non-zero exit status 1.
+[Fri Apr 18 12:57:40 2025]
+RuleException:
+CalledProcessError in file /Users/nanzhen/Documents/GitHub/LABhabitatPre/Snakefile, line 56:
+Command 'set -euo pipefail;  /Users/nanzhen/opt/anaconda3/envs/snakemake/bin/python3.12 /Users/nanzhen/Documents/GitHub/LABhabitatPre/.snakemake/scripts/tmp21zltdg3.score_query_habitat.py' returned non-zero exit status 1.
+Error in rule habitat_profile:
+    jobid: 5
+    input: results/mapped_metadata/AF243177_blast_results_filtered_metadata.csv, 16S_database/source_class_weight.csv
+    output: results/habitat_profiles/AF243177_habitat_profile.csv
+
+[Fri Apr 18 12:57:40 2025]
+Error in rule habitat_profile:
+    jobid: 17
+    input: results/mapped_metadata/HQ906500_blast_results_filtered_metadata.csv, 16S_database/source_class_weight.csv
+    output: results/habitat_profiles/HQ906500_habitat_profile.csv
+
+RuleException:
+CalledProcessError in file /Users/nanzhen/Documents/GitHub/LABhabitatPre/Snakefile, line 56:
+Command 'set -euo pipefail;  /Users/nanzhen/opt/anaconda3/envs/snakemake/bin/python3.12 /Users/nanzhen/Documents/GitHub/LABhabitatPre/.snakemake/scripts/tmpd1rruuc7.score_query_habitat.py' returned non-zero exit status 1.
+[Fri Apr 18 12:57:40 2025]
+Error in rule habitat_profile:
+    jobid: 1
+    input: results/mapped_metadata/KP326371_blast_results_filtered_metadata.csv, 16S_database/source_class_weight.csv
+    output: results/habitat_profiles/KP326371_habitat_profile.csv
+
+[Fri Apr 18 12:57:41 2025]
+Finished job 10.
+10 of 17 steps (59%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-18T125736.784275.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.
