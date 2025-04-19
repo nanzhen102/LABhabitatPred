@@ -1,7 +1,5 @@
-# LABhabitatPred
- 
-
-`LABhabitPred` is a reproducible and scalable Snakemake pipeline for predicting environmental habitat preferences of 16S rRNA sequences, specifically targeting the *Lactobacillaceae* family.
+ ![Pipeline DAG](./docs/images/logo.jpg)
+LABhabitPred is a reproducible and scalable Snakemake pipeline for predicting environmental habitat preferences of 16S rRNA sequences, specifically targeting the *Lactobacillaceae* family.
 
 ## Contents
 
